@@ -457,6 +457,18 @@ Array.from([1, 2, 3], (x) => x * x)
 // [1, 4, 9]
 ```
 
+代码不统一，团队写的吗？
+
+```diff
+Array.from(arrayLike, x => x * x);
+// 等同于
+Array.from(arrayLike).map(x => x * x);
+
+- Array.from([1, 2, 3], (x) => x * x)
++ Array.from([1, 2, 3], (x) => x * x);
+// [1, 4, 9]
+```
+
 下面的例子是取出一组 DOM 节点的文本内容。
 
 ```javascript
